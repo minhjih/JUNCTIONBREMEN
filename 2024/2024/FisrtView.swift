@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FisrtView: View {
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack {
                 Image("baby")
                     .offset(y:0)
@@ -20,6 +20,7 @@ struct FisrtView: View {
                         .padding()
                         .background(.priMain)
                         .cornerRadius(20)
+                    
                 }
                 .padding()
             }
