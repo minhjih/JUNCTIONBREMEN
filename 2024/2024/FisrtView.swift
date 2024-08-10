@@ -12,7 +12,7 @@ struct FisrtView: View {
         NavigationView {
             VStack {
                 Image("baby")
-                // 노란 버튼
+                    .offset(y:0)
                 NavigationLink(destination: SecondView()) {
                     Text("Let’s create lovely profile! ->")
                         .bold()
@@ -25,7 +25,6 @@ struct FisrtView: View {
             }
         }
     }
-    
 }
 
 //struct SecondView: View {
