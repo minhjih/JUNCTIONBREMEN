@@ -98,15 +98,9 @@ struct homeView: View {
 
 struct statsView: View {
     var body: some View {
-        ZStack {
-            Circle()
-                .frame(width: 300, height: 300)
-                .foregroundColor(.green)
-            
-            Text("\(4)")
-                .font(.system(size: 70))
-                .foregroundColor(.white)
-                .fontWeight(.bold)
+        VStack {
+            CalendarView()
+            Spacer()
         }
     }
 }

@@ -9,6 +9,7 @@ struct mainView: View {
                     .font(.subheadline)
 
                 Text("Week 10")
+                    .padding(.trailing, 12)
                     .multilineTextAlignment(.trailing)
                     .frame(maxWidth: .infinity, alignment: .trailing)
         
@@ -33,7 +34,6 @@ struct mainView: View {
             }
             .padding(.horizontal, 16)
         }
-        .padding(.horizontal, 16)
     }
 }
 

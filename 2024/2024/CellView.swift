@@ -173,46 +173,102 @@ import SwiftUI
 struct CalendarView: View {
     let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
     let dates = Array(1...30)
-    let specialDates: [Int: String] = [5: "95ckal", 12: "199ckal", 18: "72ckal"]
+    let specialDates: [Int: String] = [5: "95kcal", 18: "299kcal", 12: "72kcal"]
 
     var body: some View {
-        VStack {
-            LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 7)) {
-                ForEach(days, id: \.self){ day in
-                    Text(day)
-                        .font(.subheadline)
-                        .fontWeight(.bold)
-                        .padding(.vertical, 5)
-                        .frame(maxWidth: .infinity)
-                }
-            }
-            
-            LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 7), spacing: 20) {
-                ForEach(dates, id: \.self) { date in
-                    VStack {
-                        Text("\(date)")
-                            .font(.title3)
-                            .padding(5)
-                        
-                        if let specialText = specialDates[date] {
-                            Text(specialText)
-                                .font(.caption)
-                                .foregroundColor(.red)
-                        } else {
-                            Text(" ")
-                                .font(.caption)
-                        }
+        ScrollView {
+            VStack {
+                Text("September")
+                    .font(.system(size: 24))
+                    .fontWeight(.bold)
+                LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 7)) {
+                    ForEach(days, id: \.self){ day in
+                        Text(day)
+                            .font(.subheadline)
+                            .fontWeight(.bold)
+                            .padding(.vertical, 5)
+                            .frame(maxWidth: .infinity)
                     }
-                    .frame(maxWidth: .infinity)
                 }
+                LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 7), spacing: 20) {
+                    ForEach(dates, id: \.self) { date in
+                        VStack {
+                            if date == 18 {
+                                Text("\(date)")
+                                    .font(.title3)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.white)
+                                    .background(
+                                        Circle()
+                                            .frame(width: 32, height: 32)
+                                            .foregroundColor(.secMain)
+                                    )
+                                    .padding(2)
+                                
+                            } else {
+                                Text("\(date)")
+                                    .font(.title3)
+                                    .padding(2)
+                            }
+                            
+                            if let specialText = specialDates[date] {
+                                if date == 18 {
+                                    Text(specialText)
+                                        .font(.system(size: 10))
+                                        .foregroundColor(.red)
+                                        .fontWeight(.bold)
+                                } else {
+                                    Text(specialText)
+                                        .font(.system(size: 10))
+                                        .foregroundColor(.red)
+                                }
+                            } else {
+                                Text(" ")
+                                    .font(.system(size: 10))
+                            }
+                        }
+                        .frame(maxWidth: .infinity)
+                    }
+                }
+                Rectangle()
+                    .foregroundColor(.black3)
+                    .frame(width: 350, height: 1)
+                    .padding(.bottom, 6)
+                
+                Text("Nutrition Consumption")
+                    .font(.system(size: 24))
+                    .fontWeight(.bold)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.leading, 6)
+                    .padding(.bottom, 6)
+                HStack(alignment: .bottom, spacing: 0) {
+                    Text("🔥")
+                        .font(.system(size: 36))
+                        .fontWeight(.bold)
+                        .padding(.leading, 6)
+                    Text("2894")
+                        .font(.system(size: 36))
+                        .fontWeight(.bold)
+                        .padding(.leading, 6)
+                    Text("kcal")
+                        .font(.system(size: 20))
+                        .fontWeight(.bold)
+                        .padding(.leading, 6)
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                Image("nut1")
+                Image("nut2")
+                    .padding(.bottom, 8)
+                
+                FoodCard(image: "rest1_1", name: "Fried Chicken with Fries", description: "Delicious fried chicken with all-time best side dish, french fries.", keys: ["Carbohydrate", "High Protein", "High Fat", "Salty"], price: "11.99")
+                    .padding(.bottom, 6)
+                FoodCard(image: "rest1_2", name: "Chili Hot Wings", description: "Delicious hot wings with the best chili sauce.", keys: ["Carbohydrate", "Protein", "High Fat"], price: "9.99")
             }
+            .padding()
         }
-        .padding()
     }
 }
 
-struct CalendarView_Previews: PreviewProvider {
-    static var previews: some View {
-        CalendarView()
-    }
+#Preview {
+    statsView()
 }
