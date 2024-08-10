@@ -108,7 +108,7 @@ import SwiftUI
 struct carouselView: View {
     @State private var currentIndex: Int = 0
     @GestureState private var dragOffset: CGFloat = 0
-    private let images: [String] = ["Timeline_Week3", "Timeline_Week4", "Timeline_Week3", "Timeline_Week4", "Timeline_Week3"]
+    private let images: [String] = ["Month 1", "Month 3", "Month 4", "Month 5", "Month 6", "Month 7", "Month 8", "Month 9"]
 
     var body: some View {
 
