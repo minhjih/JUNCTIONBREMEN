@@ -82,6 +82,17 @@ struct ChatView: View {
         .onTapGesture {
             UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to:nil, from:nil, for:nil)
         }
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .principal) {
+                Text("Chatbot")
+                    .foregroundColor(.priMain)
+                    .fontWeight(.black)
+                    .italic()
+                    .underline()
+//                    .shadow(color: Color.priMain.opacity(0.5), radius: 15, x: 0, y: 0)
+            }
+        }
     }
     
     private func sendMessage() {

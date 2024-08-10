@@ -18,5 +18,16 @@ struct deliveryView: View {
                 .foregroundColor(.blue)
                 .fontWeight(.bold)
         }
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .principal) {
+                Text("Delivery")
+                    .foregroundColor(.priMain)
+                    .fontWeight(.black)
+                    .italic()
+                    .underline()
+//                    .shadow(color: Color.priMain.opacity(0.5), radius: 15, x: 0, y: 0)
+            }
+        }
     }
 }

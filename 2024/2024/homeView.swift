@@ -9,28 +9,30 @@ import SwiftUI
 
 struct homeView: View {
     var body: some View {
-        TabView {
-            mainView()
-                .tabItem {
-                    Image(systemName: "house")
-                    Text("Home")
-                }
-           deliveryView()
-                .tabItem {
-                    Image(systemName: "fork.knife")
-                    Text("Delivery")
-                }
-            ChatView()
-                .tabItem {
-                    Image(systemName: "magnifyingglass")
-                    Text("Chatbot")
-                }
-            statsView()
-                .tabItem {
-                    Image(systemName: "chart.bar.xaxis.ascending")
-                    Text("Statistics")
-                }
-        }.accentColor(.priMain)
+        NavigationStack {
+            TabView {
+                mainView()
+                    .tabItem {
+                        Image(systemName: "house")
+                        Text("Home")
+                    }
+                deliveryView()
+                    .tabItem {
+                        Image(systemName: "fork.knife")
+                        Text("Delivery")
+                    }
+                ChatView()
+                    .tabItem {
+                        Image(systemName: "magnifyingglass")
+                        Text("Chatbot")
+                    }
+                statsView()
+                    .tabItem {
+                        Image(systemName: "chart.bar.xaxis.ascending")
+                        Text("Statistics")
+                    }
+            }.accentColor(.priMain)
+        }
     }
 }
 
