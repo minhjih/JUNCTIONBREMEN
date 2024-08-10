@@ -11,7 +11,7 @@ struct SecondView: View {
     @State private var selectedButton: Int? = nil
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack {
                Image("first")
                 HStack{
