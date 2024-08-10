@@ -10,23 +10,23 @@ import SwiftUI
 struct homeView: View {
     var body: some View {
         TabView {
-            GreenTabView()
+            mainView()
                 .tabItem {
                     Image(systemName: "house")
                     Text("Home")
                 }
-            redTabView()
+           deliveryView()
                 .tabItem {
                     Image(systemName: "fork.knife")
                     Text("Delivery")
                 }
             
-            blueTabView()
+            ChatView()
                 .tabItem {
                     Image(systemName: "magnifyingglass")
                     Text("Chatbot")
                 }
-            YellowTabView()
+            statsView()
                 .tabItem {
                     Image(systemName: "chart.bar.xaxis.ascending")
                     Text("Statistics")
@@ -36,52 +36,8 @@ struct homeView: View {
         }.accentColor(.secMain)
     }
 }
-    struct GreenTabView: View {
-        var body: some View {
-            ZStack {
-                Circle()
-                    .frame(width: 300, height: 300)
-                    .foregroundColor(.green)
-                
-                Text("\(1)")
-                    .font(.system(size: 70))
-                    .foregroundColor(.white)
-                    .fontWeight(.bold)
-            }
-        }
-    }
-    
-    struct redTabView: View {
-        var body: some View {
-            ZStack {
-                Circle()
-                    .frame(width: 300, height: 300)
-                    .foregroundColor(.red)
-                
-                Text("\(2)")
-                    .font(.system(size: 70))
-                    .foregroundColor(.blue)
-                    .fontWeight(.bold)
-            }
-        }
-    }
-    
-    struct blueTabView: View {
-        var body: some View {
-            ZStack {
-                Circle()
-                    .frame(width: 300, height: 300)
-                    .foregroundColor(.green)
-                
-                Text("\(3)")
-                    .font(.system(size: 70))
-                    .foregroundColor(.white)
-                    .fontWeight(.bold)
-            }
-        }
-    }
-    
-struct YellowTabView: View {
+
+struct statsView: View {
     var body: some View {
         ZStack {
             Circle()

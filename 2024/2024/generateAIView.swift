@@ -18,7 +18,7 @@ struct ChatView: View {
 
                     ForEach(chatGPTService.messages) { message in
                         HStack {
-                            if message.isUser == "user" { //유저일 때
+                            if message.isUser == "user" { //user일 때
                                 Spacer()
                                 Text(message.content)
                                     .padding()
@@ -40,7 +40,7 @@ struct ChatView: View {
                 }
             }
             
-            HStack {
+            HStack { //ui 수정
                 TextField("Type your message...", text: $userInput)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding(.horizontal)
@@ -48,7 +48,7 @@ struct ChatView: View {
                 Button(action: {
                     sendMessage()
                 }) {
-                    Text("Send")
+                    Text("Send") //ui 수정
                         .padding()
                         .background(Color.blue)
                         .foregroundColor(.white)

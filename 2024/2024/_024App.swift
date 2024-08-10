@@ -12,7 +12,7 @@ import SwiftUI
 struct _024App: App {
     var body: some Scene {
         WindowGroup {
-            ChatView()
+            homeView()
         }
     }
 }
