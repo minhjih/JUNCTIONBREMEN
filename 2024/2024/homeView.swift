@@ -66,6 +66,12 @@ struct homeView: View {
                             .underline()
         //                    .shadow(color: Color.priMain.opacity(0.5), radius: 15, x: 0, y: 0)
                     }
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        NavigationLink(destination: cartView()) {
+                            Image(systemName: "cart")
+                                .foregroundColor(.priMain)
+                        }
+                    }
                 case .chat:
                     ToolbarItem(placement: .principal) {
                         Text("Chatbot")

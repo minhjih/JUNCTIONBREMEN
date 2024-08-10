@@ -6,28 +6,6 @@
 //
 import SwiftUI
 
-//struct deliveryView: View {
-//    var body: some View {
-//        ZStack {
-//            Color.red
-////                            .ignoresSafeArea()
-//            
-//            ScrollView(){
-//                VStack {
-//                    Text("2")
-//                        .font(.system(size: 70))
-//                        .foregroundColor(.blue)
-//                        .fontWeight(.bold)
-//                }
-////                Text("\(2)")
-////                    .font(.system(size: 70))
-////                    .foregroundColor(.blue)
-////                    .fontWeight(.bold)
-//            }
-//        }
-//    }
-//}
-
 struct deliveryView: View {
     var body: some View {
         NavigationStack {
@@ -45,44 +23,11 @@ struct deliveryView: View {
                         RestaurantCard(image1: "rest1_1", image2: "rest1_2", image3: "rest1_3", name: "Chicken Table", rating: "4.5", time: "40-45", tip: "2-4", min: "9.99")
                         RestaurantCard(image1: "rest1_1", image2: "rest1_2", image3: "rest1_3", name: "Chicken Table", rating: "4.5", time: "40-45", tip: "2-4", min: "9.99")
                         RestaurantCard(image1: "rest1_1", image2: "rest1_2", image3: "rest1_3", name: "Chicken Table", rating: "4.5", time: "40-45", tip: "2-4", min: "9.99")
-//                        RestaurantCard()
-//                        RestaurantCard()
-//                        RestaurantCard()
-//                        RestaurantCard()
                     }
                 }
             }
         }
         .navigationBarTitleDisplayMode(.inline)
-        .toolbar {
-            ToolbarItem(placement: .principal) {
-                Text("Delivery")
-                    .foregroundColor(.priMain)
-                    .fontWeight(.black)
-                    .italic()
-                    .underline()
-//                    .shadow(color: Color.priMain.opacity(0.5), radius: 15, x: 0, y: 0)
-            }
-            ToolbarItem(placement: .navigationBarTrailing) {
-                Button(action: {
-//                    cartView()
-                }) {
-                    Image(systemName: "cart")
-                        .foregroundColor(.priMain)
-                }
-            }
-        }
-        .navigationBarTitleDisplayMode(.inline)
-        .toolbar {
-            ToolbarItem(placement: .principal) {
-                Text("Delivery")
-                    .foregroundColor(.priMain)
-                    .fontWeight(.black)
-                    .italic()
-                    .underline()
-//                    .shadow(color: Color.priMain.opacity(0.5), radius: 15, x: 0, y: 0)
-            }
-        }
     }
 }
 

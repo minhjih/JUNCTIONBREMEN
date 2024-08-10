@@ -10,6 +10,7 @@ import SwiftUI
 struct deliveryMenuOptionView: View {
     @Environment(\.dismiss) var dismiss
     @State private var showAlert = false
+    @State private var showCartView = false
     var image: String
     var name: String
     var description: String
@@ -162,13 +163,17 @@ struct deliveryMenuOptionView: View {
                                 title: Text("Are you sure?"),
                                 message: Text("This food contains 180mg of salt. Recommended amount is 100mg a day."),
                                 primaryButton: .destructive(Text("Proceed")) {
-//                                    CartView()
+                                    showCartView = true
                                 },
                                 secondaryButton: .cancel(Text("Cancel"))
                             )
                         }
-                    
                 }
+                .background(
+                    NavigationLink(destination: cartView(), isActive: $showCartView) {
+                        EmptyView()
+                    }
+                )
             }
         }
         .edgesIgnoringSafeArea(.top)
@@ -182,9 +187,7 @@ struct deliveryMenuOptionView: View {
                 }
             }
             ToolbarItem(placement: .navigationBarTrailing) {
-                Button(action: {
-                    //                    cartView()
-                }) {
+                NavigationLink(destination: cartView()) {
                     Image(systemName: "cart")
                         .foregroundColor(.priMain)
                 }

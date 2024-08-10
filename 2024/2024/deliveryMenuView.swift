@@ -31,8 +31,6 @@ struct EdgeBorder: Shape {
             case .trailing:
                 x = rect.width - width
                 w = width
-            default:
-                break
             }
 
             path.addRect(CGRect(x: x, y: y, width: w, height: h))
@@ -139,9 +137,7 @@ struct deliveryMenuView: View {
                 }
             }
             ToolbarItem(placement: .navigationBarTrailing) {
-                Button(action: {
-                    //                    cartView()
-                }) {
+                NavigationLink(destination: cartView()) {
                     Image(systemName: "cart")
                         .foregroundColor(.priMain)
                 }
