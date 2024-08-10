@@ -20,7 +20,6 @@ struct homeView: View {
                     Image(systemName: "fork.knife")
                     Text("Delivery")
                 }
-            
             ChatView()
                 .tabItem {
                     Image(systemName: "magnifyingglass")
@@ -31,9 +30,7 @@ struct homeView: View {
                     Image(systemName: "chart.bar.xaxis.ascending")
                     Text("Statistics")
                 }
-            
-            
-        }.accentColor(.secMain)
+        }.accentColor(.priMain)
     }
 }
 
