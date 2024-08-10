@@ -11,7 +11,11 @@ struct ThirdView :View {
     
     @State var selectedColor = ""
     var colors = ["Select your relationship ", "green", "blue"]
-    @State var name: String = ""
+    @State var relationship: String = ""
+    @State var age: String = ""
+    @State var often: String = ""
+    @State var allergy: String = ""
+    @Environment(\.dismiss) var dismiss
 
     var body: some View {
         NavigationView {
@@ -21,81 +25,91 @@ struct ThirdView :View {
                     Image("Group 2_2")
                     Text("Tell Us About Yourself")
                         .bold()
-                }
+            }
                 
+            ScrollView {
                 Text("Relationship")
-                    .padding(.trailing, 250)
+                    .padding(.leading, 12)
+                    .frame(maxWidth: .infinity, alignment: .leading)
                     .foregroundColor(.priMain)
                     .offset(y:13)
                     .padding()
                 
-//                Picker("Choose a color", selection: $selectedColor) {
-//                  ForEach(colors, id: \.self) {
-//                    Text($0)
-//                  }
-//                }
-//                .cornerRadius(15)
-//                .padding()
-                TextField("   ex) Self", text: $name)
+    //                Picker("Choose a color", selection: $selectedColor) {
+    //                  ForEach(colors, id: \.self) {
+    //                    Text($0)
+    //                  }
+    //                }
+    //                .cornerRadius(15)
+    //                .padding()
+                TextField("ex) Self", text: $relationship)
                     .frame(height: 40) // 높이
+                    .padding(.horizontal, 15)
                     .overlay(
                         RoundedRectangle(cornerRadius: 5)
-                            .stroke(Color.yellow, lineWidth: 2)  // 노란색 테두리
+                            .stroke(.priAlt, lineWidth: 2)  // 노란색 테두리
                     )
                     .frame(maxWidth: 340, minHeight: 10)
                 
                 Text("Age")
-                    .padding(.trailing, 300)
+                    .padding(.leading, 12)
+                    .frame(maxWidth: .infinity, alignment: .leading)
                     .foregroundColor(.priMain)
                     .offset(y:13)
                     .padding()
                 
-                TextField("   ex) 27", text: $name)
+                TextField("ex) 27", text: $age)
                     .frame(height: 40) // 높이
+                    .padding(.horizontal, 15)
                     .overlay(
                         RoundedRectangle(cornerRadius: 5)
-                            .stroke(Color.yellow, lineWidth: 2)  // 노란색 테두리
+                            .stroke(.priAlt, lineWidth: 2)  // 노란색 테두리
                     )
                     .frame(maxWidth: 340, minHeight: 10)
                 
-//                Picker("Select your year of birth", selection: $selectedColor) {
-//                  ForEach(colors, id: \.self) {
-//                    Text($0)
-//                  }
-//                }
-//                .cornerRadius(15)
-//                .padding()
+    //                Picker("Select your year of birth", selection: $selectedColor) {
+    //                  ForEach(colors, id: \.self) {
+    //                    Text($0)
+    //                  }
+    //                }
+    //                .cornerRadius(15)
+    //                .padding()
                 
                 
                 Text("How often do you eat delivery food?              ")
-                    .padding(.trailing,-10)
+                    .padding(.leading, 12)
+                    .frame(maxWidth: .infinity, alignment: .leading)
                     .foregroundColor(.priMain)
                     .offset(y:13)
                     .padding()
                 
-                TextField("   ex) 4-6 times a week", text: $name)
+                TextField("ex) 4-6 times a week", text: $often)
                     .frame(height: 40) // 높이
+                    .padding(.horizontal, 15)
                     .overlay(
                         RoundedRectangle(cornerRadius: 5)
-                            .stroke(Color.yellow, lineWidth: 2)  // 노란색 테두리
+                            .stroke(.priAlt, lineWidth: 2)  // 노란색 테두리
                     )
                     .frame(maxWidth: 340, minHeight: 10)
                 
                 
                 
                 Text("Do you have any allergies?")
-                    .padding(.trailing,120)
+                    .padding(.leading, 12)
+                    .frame(maxWidth: .infinity, alignment: .leading)
                     .foregroundColor(.priMain)
                     .offset(y:13)
                     .padding()
                 
-                TextField("   ex) apple", text: $name)
+                TextField("ex) apple", text: $allergy)
                     .frame(height: 40) // 높이
+                    .padding(.horizontal, 15)
                     .overlay(
                         RoundedRectangle(cornerRadius: 5)
-                            .stroke(Color.yellow, lineWidth: 2)  // 노란색 테두리
+                            .stroke(.priAlt, lineWidth: 2)  // 노란색 테두리
                     )
                     .frame(maxWidth: 340, minHeight: 10)
+            }
                 
             }
         }
@@ -111,6 +125,17 @@ struct ThirdView :View {
                 .frame(maxWidth: .infinity) // 버튼의 너비를 가능한 한 최대화
                 .padding(.horizontal) // 좌우 여백 추가
         }
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button(action: {
+                    dismiss()
+                }) {
+                    Image(systemName: "chevron.backward")
+                        .foregroundColor(.priMain)
+                }
+            }
+        }
+        .navigationBarBackButtonHidden(true)
     }
 }
 

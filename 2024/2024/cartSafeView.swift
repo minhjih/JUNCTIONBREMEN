@@ -13,6 +13,7 @@ struct cartSafeView: View {
     var body: some View {
         ScrollView {
             VStack() {
+                Divider().opacity(0).padding(.top, 6)
                 FoodCard(image: "rest2_1", name: "Premium Salad Bowl", description: "All the healthy ingredients ready for you! Dressing options available.", keys: ["Carbohydrate", "High Protein", "Low Fat", "High Vitamin"], price: "13.99")
                 VStack {
                     HStack(alignment: .center) {
