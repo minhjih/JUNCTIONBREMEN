@@ -1,0 +1,2 @@
+Nutrient_estimate/pretrained_model/encoder/senet154-c7b49a05.pth filter=lfs diff=lfs merge=lfs -text
+Nutrient_estimate/pretrained_model/model_senet filter=lfs diff=lfs merge=lfs -text
