@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../test/images
+test: ../test/images
+
+nc: 12
+names: ['bulgogi', 'kimchi', 'meat', 'noodle', 'plate', 'potato', 'pumpkin', 'rice', 'salad', 'scramble', 'soup', 'tofu']
+
+roboflow:
+  workspace: jaehyun-7csqp
+  project: food-detection-6o9wb
+  version: 2
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/jaehyun-7csqp/food-detection-6o9wb/dataset/2
