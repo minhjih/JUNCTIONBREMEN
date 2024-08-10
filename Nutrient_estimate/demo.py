@@ -2,7 +2,7 @@ import argparse
 import torch
 import cv2
 import os
-import torch.nn.parallel
+#import torch.nn.parallel
 import modules, net, resnet, densenet, senet
 import numpy as np
 import loaddata_demo as loaddata
