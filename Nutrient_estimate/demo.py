@@ -38,7 +38,7 @@ def run(img_loc = "./input.jpg"):
         os.makedirs("./output")
 
     model = define_model(is_resnet=False, is_densenet=False, is_senet=True)
-    model = torch.nn.DataParallel(model).cuda()
+    #model = torch.nn.DataParallel(model).cuda()
     model.load_state_dict(torch.load('./pretrained_model/model_senet'))
     model.eval()
  
