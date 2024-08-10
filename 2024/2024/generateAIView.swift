@@ -29,7 +29,7 @@ struct ChatView: View {
                             } else if message.isUser == "ai" { //ai일 때
                                 Text(message.content)
                                     .padding()
-                                    .background(.black3)
+                                    .background(.secMain)
                                     .foregroundStyle(.black5)
                                     .cornerRadius(18)
                                     .padding(.horizontal)
@@ -40,7 +40,7 @@ struct ChatView: View {
                 }
             }
             
-            HStack { //ui 수정
+            HStack {
                 Button(action: {
                 }) {
                     Circle()
@@ -53,8 +53,15 @@ struct ChatView: View {
                 }
                 TextField("Type your message...", text: $userInput)
                     .frame(width: 278, height: 36)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                
+                    .padding(.horizontal, 5)
+                    .background(
+                        RoundedRectangle(cornerRadius: 18)
+                            .fill(Color.white)
+                    )
+                    .overlay(
+                        RoundedRectangle(cornerRadius:18)
+                            .strokeBorder(Color.gray, style: StrokeStyle(lineWidth: 0))
+                    )
                 Button(action: {
                     sendMessage()
                 }) {
@@ -69,9 +76,12 @@ struct ChatView: View {
             }
             .frame(width: 393, height: 62)
             .background(Color.priMain)
-            .padding(.bottom)
+            .padding(.bottom, 1)
         }
         .navigationTitle("ChatGPT")
+        .onTapGesture {
+            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to:nil, from:nil, for:nil)
+        }
     }
     
     private func sendMessage() {
