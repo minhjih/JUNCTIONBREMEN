@@ -25,17 +25,6 @@ struct mainView: View {
             }
         }
         .padding(.horizontal, 16)
-        .navigationBarTitleDisplayMode(.inline)
-        .toolbar {
-            ToolbarItem(placement: .principal) {
-                Text("Home")
-                    .foregroundColor(.priMain)
-                    .fontWeight(.black)
-                    .italic()
-                    .underline()
-//                    .shadow(color: Color.priMain.opacity(0.5), radius: 15, x: 0, y: 0)
-            }
-        }
     }
 }
 
