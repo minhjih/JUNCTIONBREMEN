@@ -16,9 +16,9 @@ import matplotlib.pyplot as plt
 from get_json_from_image import get_food_json
 
 parser = argparse.ArgumentParser(description='KD-network')
-parser.add_argument('--img', metavar='DIR',default="./input.jpg",
+parser.add_argument('--img', metavar='DIR',default="./input/test.jpg",
                     help='img to input')
-parser.add_argument('--json', metavar='DIR',default="./labelme_annotations_ellipse.json",
+parser.add_argument('--json', metavar='DIR',default="./input/test.json",
                     help='json file to input')
 parser.add_argument('--output', metavar='DIR',default="./output",
                     help='dir to output')
@@ -42,7 +42,7 @@ def define_model(is_resnet, is_densenet, is_senet):
     return model
    
 
-def realmain(img):
+def main():
     if (not os.path.exists(args.output)):
         print("Output directory doesn't exist! Creating...")
         os.makedirs(args.output)
@@ -51,9 +51,8 @@ def realmain(img):
     model = torch.nn.DataParallel(model).cuda()
     model.load_state_dict(torch.load('./pretrained_model/model_senet'))
     model.eval()
-    
+    print
     img = cv2.imread(args.img)
-    
     
     nyu2_loader = loaddata.readNyu2(args.img)
   
@@ -87,5 +86,5 @@ def test(nyu2_loader, model, width, height):
         get_mask(out_grey, args.json, args.output)
         
         
-# if __name__ == '__main__':
-#     main()
+if __name__ == '__main__':
+    main()
