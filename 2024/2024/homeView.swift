@@ -6,8 +6,10 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct homeView: View {
+    @Query var myModels: [MyModel]
     var body: some View {
         TabView {
             mainView()
@@ -26,7 +28,8 @@ struct homeView: View {
                     Image(systemName: "magnifyingglass")
                     Text("Chatbot")
                 }
-            statsView()
+//            CalendarView(month: Date(), myModels: myModels).modelContainer(for: MyModel.self)
+            CalendarView()
                 .tabItem {
                     Image(systemName: "chart.bar.xaxis.ascending")
                     Text("Statistics")

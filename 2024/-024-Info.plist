@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Priavacy-Camera Usage Description</key>
+	<string>카메라 접근을 허용해 주세요</string>
+	<key>Privacy — Photo Library Additions Usage Description</key>
+	<string>저장을 위해 사용됩니다</string>
+</dict>
+</plist>

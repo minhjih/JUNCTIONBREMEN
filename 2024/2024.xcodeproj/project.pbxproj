@@ -9,6 +9,20 @@
 /* Begin PBXBuildFile section */
 		9812C2372C675FFF0035BA81 /* deliveryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9812C2362C675FFF0035BA81 /* deliveryView.swift */; };
 		9812C2392C6762320035BA81 /* storeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9812C2382C6762320035BA81 /* storeView.swift */; };
+		9812C23B2C677BC80035BA81 /* cameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9812C23A2C677BC80035BA81 /* cameraView.swift */; };
+		9812C23D2C677C580035BA81 /* cameraContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9812C23C2C677C580035BA81 /* cameraContentView.swift */; };
+		9812C25C2C6784D80035BA81 /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9812C25B2C6784D80035BA81 /* CameraViewModel.swift */; };
+		9812C25E2C6784FC0035BA81 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9812C25D2C6784FC0035BA81 /* Camera.swift */; };
+		9812C2602C678A960035BA81 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9812C25F2C678A960035BA81 /* ImagePicker.swift */; };
+		9812C2622C678D010035BA81 /* hideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9812C2612C678D010035BA81 /* hideKeyboard.swift */; };
+		9812C2642C678EEB0035BA81 /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9812C2632C678EEB0035BA81 /* CellView.swift */; };
+		9812C2662C6790260035BA81 /* MyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9812C2652C6790260035BA81 /* MyModel.swift */; };
+		9812C2682C6790F90035BA81 /* SampleDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9812C2672C6790F90035BA81 /* SampleDate.swift */; };
+		9812C26A2C67A94F0035BA81 /* FisrtView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9812C2692C67A94F0035BA81 /* FisrtView.swift */; };
+		9812C26C2C67BA290035BA81 /* ThirdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9812C26B2C67BA290035BA81 /* ThirdView.swift */; };
+		9812C26E2C67C6690035BA81 /* fourthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9812C26D2C67C6690035BA81 /* fourthView.swift */; };
+		9812C2702C67C7070035BA81 /* finalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9812C26F2C67C7070035BA81 /* finalView.swift */; };
+		9812C2722C67CB320035BA81 /* secondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9812C2712C67CB320035BA81 /* secondView.swift */; };
 		9876C05C2C6742EA00A4A67D /* homeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9876C05B2C6742EA00A4A67D /* homeView.swift */; };
 		9876C05E2C67430900A4A67D /* generateAIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9876C05D2C67430900A4A67D /* generateAIView.swift */; };
 		9876C0602C67431600A4A67D /* generateAI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9876C05F2C67431600A4A67D /* generateAI.swift */; };
@@ -23,6 +37,21 @@
 /* Begin PBXFileReference section */
 		9812C2362C675FFF0035BA81 /* deliveryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = deliveryView.swift; sourceTree = "<group>"; };
 		9812C2382C6762320035BA81 /* storeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = storeView.swift; sourceTree = "<group>"; };
+		9812C23A2C677BC80035BA81 /* cameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cameraView.swift; sourceTree = "<group>"; };
+		9812C23C2C677C580035BA81 /* cameraContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cameraContentView.swift; sourceTree = "<group>"; };
+		9812C23E2C677DA30035BA81 /* -024-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "-024-Info.plist"; sourceTree = SOURCE_ROOT; };
+		9812C25B2C6784D80035BA81 /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
+		9812C25D2C6784FC0035BA81 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
+		9812C25F2C678A960035BA81 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		9812C2612C678D010035BA81 /* hideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hideKeyboard.swift; sourceTree = "<group>"; };
+		9812C2632C678EEB0035BA81 /* CellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
+		9812C2652C6790260035BA81 /* MyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyModel.swift; sourceTree = "<group>"; };
+		9812C2672C6790F90035BA81 /* SampleDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleDate.swift; sourceTree = "<group>"; };
+		9812C2692C67A94F0035BA81 /* FisrtView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FisrtView.swift; sourceTree = "<group>"; };
+		9812C26B2C67BA290035BA81 /* ThirdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdView.swift; sourceTree = "<group>"; };
+		9812C26D2C67C6690035BA81 /* fourthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fourthView.swift; sourceTree = "<group>"; };
+		9812C26F2C67C7070035BA81 /* finalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = finalView.swift; sourceTree = "<group>"; };
+		9812C2712C67CB320035BA81 /* secondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = secondView.swift; sourceTree = "<group>"; };
 		9876C05B2C6742EA00A4A67D /* homeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeView.swift; sourceTree = "<group>"; };
 		9876C05D2C67430900A4A67D /* generateAIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = generateAIView.swift; sourceTree = "<group>"; };
 		9876C05F2C67431600A4A67D /* generateAI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = generateAI.swift; sourceTree = "<group>"; };
@@ -66,16 +95,31 @@
 			isa = PBXGroup;
 			children = (
 				98A03F592C5A114500EDDFCC /* Assets.xcassets */,
+				98A03F5B2C5A114500EDDFCC /* Preview Content */,
 				98A03F572C5A114400EDDFCC /* ContentView.swift */,
 				98A03F552C5A114400EDDFCC /* _024App.swift */,
 				9876C05B2C6742EA00A4A67D /* homeView.swift */,
 				9876C0612C674AA700A4A67D /* mainView.swift */,
+				9812C23E2C677DA30035BA81 /* -024-Info.plist */,
 				9876C0632C6755E700A4A67D /* carouselView.swift */,
 				9812C2362C675FFF0035BA81 /* deliveryView.swift */,
 				9876C05F2C67431600A4A67D /* generateAI.swift */,
 				9876C05D2C67430900A4A67D /* generateAIView.swift */,
-				98A03F5B2C5A114500EDDFCC /* Preview Content */,
 				9812C2382C6762320035BA81 /* storeView.swift */,
+				9812C23A2C677BC80035BA81 /* cameraView.swift */,
+				9812C23C2C677C580035BA81 /* cameraContentView.swift */,
+				9812C25B2C6784D80035BA81 /* CameraViewModel.swift */,
+				9812C25D2C6784FC0035BA81 /* Camera.swift */,
+				9812C25F2C678A960035BA81 /* ImagePicker.swift */,
+				9812C2612C678D010035BA81 /* hideKeyboard.swift */,
+				9812C2632C678EEB0035BA81 /* CellView.swift */,
+				9812C2652C6790260035BA81 /* MyModel.swift */,
+				9812C2672C6790F90035BA81 /* SampleDate.swift */,
+				9812C2692C67A94F0035BA81 /* FisrtView.swift */,
+				9812C2712C67CB320035BA81 /* secondView.swift */,
+				9812C26B2C67BA290035BA81 /* ThirdView.swift */,
+				9812C26D2C67C6690035BA81 /* fourthView.swift */,
+				9812C26F2C67C7070035BA81 /* finalView.swift */,
 			);
 			path = 2024;
 			sourceTree = "<group>";
@@ -161,10 +205,24 @@
 				9876C0622C674AA700A4A67D /* mainView.swift in Sources */,
 				9812C2392C6762320035BA81 /* storeView.swift in Sources */,
 				98A03F582C5A114400EDDFCC /* ContentView.swift in Sources */,
+				9812C2602C678A960035BA81 /* ImagePicker.swift in Sources */,
+				9812C2642C678EEB0035BA81 /* CellView.swift in Sources */,
+				9812C23B2C677BC80035BA81 /* cameraView.swift in Sources */,
+				9812C23D2C677C580035BA81 /* cameraContentView.swift in Sources */,
+				9812C2682C6790F90035BA81 /* SampleDate.swift in Sources */,
+				9812C26E2C67C6690035BA81 /* fourthView.swift in Sources */,
+				9812C25C2C6784D80035BA81 /* CameraViewModel.swift in Sources */,
 				98A03F562C5A114400EDDFCC /* _024App.swift in Sources */,
 				9876C0602C67431600A4A67D /* generateAI.swift in Sources */,
 				9812C2372C675FFF0035BA81 /* deliveryView.swift in Sources */,
+				9812C2702C67C7070035BA81 /* finalView.swift in Sources */,
+				9812C2622C678D010035BA81 /* hideKeyboard.swift in Sources */,
 				9876C05C2C6742EA00A4A67D /* homeView.swift in Sources */,
+				9812C2662C6790260035BA81 /* MyModel.swift in Sources */,
+				9812C2722C67CB320035BA81 /* secondView.swift in Sources */,
+				9812C26A2C67A94F0035BA81 /* FisrtView.swift in Sources */,
+				9812C26C2C67BA290035BA81 /* ThirdView.swift in Sources */,
+				9812C25E2C6784FC0035BA81 /* Camera.swift in Sources */,
 				9876C05E2C67430900A4A67D /* generateAIView.swift in Sources */,
 				9876C0642C6755E700A4A67D /* carouselView.swift in Sources */,
 			);
@@ -300,8 +358,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"2024/Preview Content\"";
+				DEVELOPMENT_TEAM = SPWZSLF9KX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "-024-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -328,8 +388,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"2024/Preview Content\"";
+				DEVELOPMENT_TEAM = SPWZSLF9KX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "-024-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
