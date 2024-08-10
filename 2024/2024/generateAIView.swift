@@ -41,21 +41,34 @@ struct ChatView: View {
             }
             
             HStack { //ui 수정
+                Button(action: {
+                }) {
+                    Circle()
+                        .frame(width: 36, height: 36)
+                        .foregroundColor(.white)
+                        .overlay(
+                            Image(systemName: "photo.fill")
+                                .foregroundColor(.black1)
+                        )
+                }
                 TextField("Type your message...", text: $userInput)
+                    .frame(width: 278, height: 36)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding(.horizontal)
                 
                 Button(action: {
                     sendMessage()
                 }) {
-                    Text("Send") //ui 수정
-                        .padding()
-                        .background(Color.blue)
+                    Circle()
+                        .frame(width: 36, height: 36)
                         .foregroundColor(.white)
-                        .cornerRadius(10)
-                        .padding(.horizontal)
+                        .overlay(
+                            Image(systemName: "paperplane.fill")
+                                .foregroundColor(.black1)
+                        )
                 }
             }
+            .frame(width: 393, height: 62)
+            .background(Color.priMain)
             .padding(.bottom)
         }
         .navigationTitle("ChatGPT")
