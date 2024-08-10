@@ -15,7 +15,7 @@ struct ChatMessage: Identifiable {
 
 class ChatGPTService: ObservableObject {
     @Published var messages: [ChatMessage] = []
-    private let apiKey = "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"
+    let apiKey = Storage().APIKEY
     
     func sendMessage(_ text: String) {
         let userMessage = ChatMessage(content: text, isUser: "user")
