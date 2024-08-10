@@ -2,7 +2,7 @@ import argparse
 import torch
 import cv2
 import os
-#import torch.nn.parallel
+import torch.nn.parallel
 import modules, net, resnet, densenet, senet
 import numpy as np
 import loaddata_demo as loaddata
@@ -51,7 +51,10 @@ def run(img_loc = "./input.jpg"):
   
     nut_source = test(nyu2_loader, model, img.shape[1], img.shape[0])
     with open('nutritional_info.json', 'w') as json_file:
-        json.dump(nut_source, json_file)
+        res= json.dump(nut_source, json_file)
+    if not res :
+        return None
+    return res 
 
 def test(nyu2_loader, model, width, height):
     with torch.no_grad():        
@@ -78,10 +81,10 @@ def test(nyu2_loader, model, width, height):
             nut_source = cal(vol)
             print(nut_source)
             out_file = open(os.path.join("./output", "out.txt"), "w")
-            out_file.write("Volume:\n")
+            #out_file.write("Volume:\n")
             out_file.write(str(vol))
-            out_file.write("\n")
-            out_file.write("unit: cm^3")
+            #out_file.write("\n")
+            #out_file.write("unit: cm^3")
             out_file.close()
             get_mask(out_grey, "./labelme_annotations_ellipse.json", "./output")
     return nut_source
@@ -109,5 +112,8 @@ def cal(vol):
     nutrient["calories"] = nutrient["Carbohydrate"] * 4 + nutrient["Protein"] * 4 + nutrient["Fat"] * 9
     return nutrient
 
-if __name__ == "__main__":
+def initiateAI():
+    #if __name__ == "__main__":
     run("./test/images/IMG_5808_jpeg.rf.2679f78fabc95e90c79cb1702fea98be.jpg")
+
+    

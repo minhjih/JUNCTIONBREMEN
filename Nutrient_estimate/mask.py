@@ -35,7 +35,7 @@ def get_bbox(points, h, w):
 def get_mask(img, json_path, output_path):
     with open(json_path, 'r') as json_file:
         data = json.load(json_file)
-        mask = np.zeros((img.shape[0], img.shape[1], 3), dtype=np.int)
+        mask = np.zeros((img.shape[0], img.shape[1], 3), dtype=np.int32)
         for shape in data['shapes']:
             label = shape['label']
             if (label == "plate" or label == "-rice"):

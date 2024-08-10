@@ -10,7 +10,7 @@ import numpy as np
 import os
 from ultralytics import YOLO
 
-def get_food_json(image_json):
+def get_food_json(image_json, images):
     model = YOLO("./best.pt")
     class_list = ['bulgogi', 'kimchi', 'meat', 'noodle', 'plate', 'potato', 'pumpkin', 'rice', 'salad', 'scramble', 'soup', 'tofu']
     
@@ -74,3 +74,4 @@ def get_food_json(image_json):
         json.dump(labelme_data, json_file, indent=4)
     
     print(f"LabelMe format results with ellipse points saved to {output_json_path}")
+    
