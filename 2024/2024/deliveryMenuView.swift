@@ -79,7 +79,7 @@ struct deliveryMenuView: View {
                     VStack(alignment: .leading) {
                         Text("40-45min")
                         Text("$2-4")
-                        Text("$10")
+                        Text("$9.99")
                     }
                     .padding(.leading, 34)
 //                    Spacer()
@@ -111,7 +111,7 @@ struct deliveryMenuView: View {
                 .padding(.bottom, 13)
                 if selectedTab == 0 {
                     VStack(spacing: 16){
-                        NavigationLink(destination: deliveryMenuOptionView()) {
+                        NavigationLink(destination: deliveryMenuOptionView(image: "rest1_1", name: "Fried Chicken with Fries", description: "Delicious fried chicken with all-time best side dish, french fries.", keys: ["Carbohydrate", "High Protein", "High Fat", "Salty"], price: "11.99")) {
                             FoodCard(image: "rest1_1", name: "Fried Chicken with Fries", description: "Delicious fried chicken with all-time best side dish, french fries.", keys: ["Carbohydrate", "High Protein", "High Fat", "Salty"], price: "11.99")
                         }
                         FoodCard(image: "rest1_2", name: "Chili Hot Wings", description: "Delicious hot wings with the best chili sauce.", keys: ["Carbohydrate", "Protein", "High Fat"], price: "9.99")
