@@ -263,7 +263,13 @@ pyrightconfig.json
 # keys
 bremen_key_pem.pem
 
-# database
+# etc
+output
+out_color.png
+out_grey.png
+mask.png
+out.txt
+input.jpg
 
 
 # End of https://www.toptal.com/developers/gitignore/api/python,flask
