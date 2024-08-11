@@ -203,12 +203,12 @@ struct CalendarView: View {
                                             .frame(width: 32, height: 32)
                                             .foregroundColor(.secMain)
                                     )
-                                    .padding(2)
+                                    .padding(3)
                                 
                             } else {
                                 Text("\(date)")
                                     .font(.title3)
-                                    .padding(2)
+                                    .padding(3)
                             }
                             
                             if let specialText = specialDates[date] {

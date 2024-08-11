@@ -31,12 +31,23 @@ struct ThirdView :View {
                         .frame(width: 80, height: 3)
                         .foregroundColor(.black4)
                 }
+                .padding(.top, 6)
                 .padding(.bottom, 12)
                 HStack{
-                    Image("Group 2_2")
+                    Text("2")
+                        .font(.system(size: 16))
+                        .fontWeight(.black)
+                        .foregroundColor(.white)
+                        .background(
+                            Circle()
+                                .foregroundColor(.priMain)
+                                .frame(width: 28, height: 28)
+                        )
+                        .padding(.trailing, 8)
                     Text("Tell Us About Yourself")
+                        .font(.system(size: 20))
                         .bold()
-            }
+                }
                 
             ScrollView {
                 Text("Relationship")
@@ -137,6 +148,14 @@ struct ThirdView :View {
                 .padding(.horizontal) // 좌우 여백 추가
         }
         .toolbar {
+            ToolbarItem(placement: .principal) {
+                Text("Welcome")
+                    .foregroundColor(.priMain)
+                    .fontWeight(.black)
+                    .italic()
+                    .underline()
+//                    .shadow(color: Color.priMain.opacity(0.5), radius: 15, x: 0, y: 0)
+            }
             ToolbarItem(placement: .navigationBarLeading) {
                 Button(action: {
                     dismiss()

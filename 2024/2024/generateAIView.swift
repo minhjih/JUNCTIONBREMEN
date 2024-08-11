@@ -11,6 +11,7 @@ struct ChatView: View {
         NavigationView {
             VStack {
                 ScrollView {
+//                    Divider().opacity(0).frame(height: 4)
                     VStack(alignment: .leading) {
                         ForEach(chatGPTService.messages) { message in
                             HStack {
@@ -185,7 +186,7 @@ struct ImageView: View {
                 }
                 .toolbar {
                     ToolbarItem(placement: .principal) {
-                        Text("AI-based Nutrition Information")
+                        Text("AI-Powered Nutrition Information")
                             .foregroundColor(.priMain)
                             .fontWeight(.black)
                             .italic()
@@ -218,6 +219,7 @@ struct ImageView: View {
                         }) {
                             Text("Upload & Detect Nutrition")
                                 .foregroundColor(.white)
+                                .fontWeight(.bold)
                                 .padding()
                                 .background(Color.orange)
                                 .cornerRadius(20)

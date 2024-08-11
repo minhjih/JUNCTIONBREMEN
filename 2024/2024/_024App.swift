@@ -14,7 +14,7 @@ struct _024App: App {
     
     var body: some Scene {
         WindowGroup {
-            FisrtView()
+            FirstView()
                 .environmentObject(sharedData)
 //            homeView()
 //            ContentView()
