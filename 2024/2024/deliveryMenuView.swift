@@ -61,7 +61,7 @@ struct deliveryMenuView: View {
                     .font(.system(size: 24))
                     .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                     .padding(.vertical, 2)
-                Text("★4.5")
+                Text("★ 4.5")
                     .font(.system(size: 16))
                 Rectangle()
                     .foregroundColor(.black4)
@@ -80,8 +80,8 @@ struct deliveryMenuView: View {
                         Text("$9.99")
                     }
                     .padding(.leading, 34)
-//                    Spacer()
                 }
+                .frame(maxWidth: .infinity, alignment: .leading)
                 Rectangle()
                     .foregroundColor(.black4)
                     .frame(width: 393, height: 5)

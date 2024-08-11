@@ -38,9 +38,49 @@ struct deliveryMenuOptionView: View {
                     .foregroundColor(.black3)
                 WrapView(keys: keys)
                     .padding(.leading, 20)
-                Image("nut1")
-                Image("nut2")
-                    .padding(.bottom, 8)
+                VStack(alignment: .leading, spacing: 10) {
+                    HStack {
+                        Text("Vitamin A")
+                            .foregroundColor(.gray)
+                            .frame(width: 95, alignment: .leading)
+                        ZStack(alignment: .leading) {
+                            Rectangle()
+                                .fill(Color.gray.opacity(0.3))
+                                .frame(height: 10)
+                            Rectangle()
+                                .fill(Color.orange)
+                                .frame(width: 130 * 1.0, height: 10)
+                        }
+                        .cornerRadius(5)
+                        Spacer()
+                        Text("130 mg")
+                            .foregroundColor(.black)
+                            .bold()
+                            .frame(width: 60, alignment: .trailing)
+                    }
+                    .padding(.horizontal, 20)
+                    HStack {
+                        Text("Salt")
+                            .foregroundColor(.gray)
+                            .frame(width: 95, alignment: .leading)
+                        ZStack(alignment: .leading) {
+                            Rectangle()
+                                .fill(Color.gray.opacity(0.3))
+                                .frame(height: 10)
+                            Rectangle()
+                                .fill(Color.secMain)
+                                .frame(height: 10)
+                        }
+                        .cornerRadius(5)
+                        Spacer()
+                        Text("180 mg")
+                            .foregroundColor(.black)
+                            .bold()
+                            .frame(width: 60, alignment: .trailing)
+                    }
+                    .padding(.horizontal, 20)
+                }
+                .padding(.bottom, 8)
                 HStack {
                     Text("Price")
                         .font(.system(size: 20))
@@ -135,48 +175,94 @@ struct deliveryMenuOptionView: View {
                     .foregroundColor(.black4)
                     .frame(width: 393, height: 5)
                     .padding(.bottom, 12)
+                }
                 HStack {
-                    VStack(alignment: .leading) {
-                        Text("Minimum Order")
-                            .font(.system(size: 10))
-                        Text("$9.99")
-                            .font(.system(size: 14))
-                            .fontWeight(.bold)
+                    Text("Option 2")
+                        .font(.system(size: 20))
+                        .fontWeight(.bold)
+                        .padding(.leading, 20)
+                    Spacer()
+                }
+                .padding(.bottom, 24)
+                HStack(alignment: .center) {
+                    ZStack {
+                        Circle()
+                            .frame(width: 24, height: 24)
+                            .foregroundColor(.tintMain)
+                        Circle()
+                            .frame(width: 10, height: 10)
+                            .foregroundColor(.white)
                     }
                     .padding(.leading, 20)
-                    Spacer()
-                    Text("Add to Cart")
+                    .padding(.trailing, 2)
+                    Text("No sauce")
                         .font(.system(size: 16))
-                        .fontWeight(.bold)
-                        .foregroundColor(.white)
-                        .frame(width: 200, height: 53)
-                        .background(
-                            RoundedRectangle(cornerRadius: 18)
-                                .foregroundColor(.priMain)
-                        )
+                    Spacer()
+                    Text("+ $0")
+                        .font(.system(size: 16))
                         .padding(.trailing, 20)
-                        .onTapGesture {
-                            showAlert = true
-                        }
-                        .alert(isPresented: $showAlert) {
-                            Alert(
-                                title: Text("Are you sure?"),
-                                message: Text("This food contains 180mg of salt. Recommended amount is 100mg a day."),
-                                primaryButton: .destructive(Text("Proceed")) {
-                                    showCartView = true
-                                },
-                                secondaryButton: .cancel(Text("Cancel"))
-                            )
-                        }
                 }
+                .padding(.bottom, 18)
+                HStack(alignment: .center) {
+                    Circle()
+                        .frame(width: 24, height: 24)
+                        .foregroundColor(.black4)
+                        .padding(.leading, 20)
+                        .padding(.trailing, 2)
+                    Text("2x Seasoning")
+                        .font(.system(size: 16))
+                    Spacer()
+                    Text("+ $0")
+                        .font(.system(size: 16))
+                        .padding(.trailing, 20)
+                }
+                .padding(.bottom, 18)
                 .background(
                     NavigationLink(destination: cartView(), isActive: $showCartView) {
                         EmptyView()
                     }
                 )
-            }
         }
         .edgesIgnoringSafeArea(.top)
+        Spacer()
+        Rectangle()
+            .foregroundColor(.black4)
+            .frame(width: 393, height: 5)
+            .padding(.bottom, 12)
+        HStack {
+            VStack(alignment: .leading) {
+                Text("Minimum Order")
+                    .font(.system(size: 10))
+                Text("$9.99")
+                    .font(.system(size: 14))
+                    .fontWeight(.bold)
+            }
+            .padding(.leading, 20)
+            Spacer()
+            Text("Add to Cart")
+                .font(.system(size: 16))
+                .fontWeight(.bold)
+                .foregroundColor(.white)
+                .frame(width: 200, height: 53)
+                .background(
+                    RoundedRectangle(cornerRadius: 18)
+                        .foregroundColor(.priMain)
+                )
+                .padding(.trailing, 20)
+                .onTapGesture {
+                    showAlert = true
+                }
+                .alert(isPresented: $showAlert) {
+                    Alert(
+                        title: Text("Are you sure?"),
+                        message: Text("This food contains 180mg of salt. Recommended amount is 100mg a day."),
+                        primaryButton: .destructive(Text("Proceed")) {
+                            showCartView = true
+                        },
+                        secondaryButton: .cancel(Text("Cancel"))
+                    )
+                }
+        }
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
                 Button(action: {

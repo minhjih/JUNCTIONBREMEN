@@ -8,7 +8,7 @@ struct mainView: View {
         ScrollView {
             VStack(spacing: 20) { // Adjust the spacing as needed
                 Divider().opacity(0).padding(.top, 1)
-                Text("Welcome, with ❤️ for \(sharedData.babyName)")
+                Text("Welcome, with 🧡 for \(sharedData.babyName)")
                     .font(.system(size: 20))
                     .fontWeight(.bold)
                     .padding(.leading, 12)
