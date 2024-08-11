@@ -2,15 +2,22 @@ import Foundation
 import SwiftUI
 
 struct mainView: View {
+    @EnvironmentObject var sharedData: SharedData
+    
     var body: some View {
         ScrollView {
             VStack(spacing: 20) { // Adjust the spacing as needed
+                Divider().opacity(0).padding(.top, 1)
+                Text("Welcome, with ❤️ for \(sharedData.babyName)")
+                    .font(.system(size: 20))
+                    .fontWeight(.bold)
+                    .padding(.leading, 12)
+                    .frame(maxWidth: .infinity, alignment: .leading)
                 Image("baby")
                     .font(.subheadline)
-
-                Text("Week 10")
+                Text("Now on Week 10")
+                    .font(.system(size: 16))
                     .padding(.trailing, 12)
-                    .multilineTextAlignment(.trailing)
                     .frame(maxWidth: .infinity, alignment: .trailing)
         
                 // Path Line
@@ -23,9 +30,9 @@ struct mainView: View {
                 
                 // Timeline Text
                 Text("Timeline")
+                    .padding(.leading, 12)
+                    .font(.system(size: 20))
                     .bold()
-                    .font(.title)
-                    .multilineTextAlignment(.leading)
                     .frame(maxWidth: .infinity, alignment: .leading)
                 
                 // Carousel View

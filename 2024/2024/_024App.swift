@@ -10,9 +10,12 @@ import SwiftUI
 @main
 
 struct _024App: App {
+    @StateObject var sharedData = SharedData() // for sharing babyName
+    
     var body: some Scene {
         WindowGroup {
             FisrtView()
+                .environmentObject(sharedData)
 //            homeView()
 //            ContentView()
         }

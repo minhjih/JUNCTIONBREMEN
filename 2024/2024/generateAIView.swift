@@ -15,14 +15,16 @@ struct ChatView: View {
                             if message.isUser == "user" { //user일 때
                                 Spacer()
                                 Text(message.content)
-                                    .padding()
+                                    .padding(.vertical, 12)
+                                    .padding(.horizontal)
                                     .background(.priMain)
                                     .foregroundStyle(.black5)
                                     .cornerRadius(18)
                                     .padding(.horizontal)
                             } else if message.isUser == "ai" { //ai일 때
                                 Text(message.content)
-                                    .padding()
+                                    .padding(.vertical, 12)
+                                    .padding(.horizontal)
                                     .background(.secMain)
                                     .foregroundStyle(.black5)
                                     .cornerRadius(18)
@@ -48,16 +50,17 @@ struct ChatView: View {
                         )
                 }
                 
-                TextField("Type your message...", text: $userInput)
-                    .frame(width: 278, height: 36)
-                    .padding(.horizontal, 5)
+                TextField("Type message...", text: $userInput)
+                    .font(.system(size: 12))
+                    .padding(.horizontal, 10)
+                    .frame(width: 278, height: 30)
                     .background(
                         RoundedRectangle(cornerRadius: 18)
                             .fill(Color.white)
                     )
                     .overlay(
                         RoundedRectangle(cornerRadius:18)
-                            .strokeBorder(Color.gray, style: StrokeStyle(lineWidth: 0))
+                            .strokeBorder(Color.black4, style: StrokeStyle(lineWidth: 1))
                     )
                 Button(action: {
                     if userInput != "" {
@@ -75,7 +78,7 @@ struct ChatView: View {
             }.onAppear (perform : UIApplication.shared.hideKeyboard)
             
             .frame(width: 393, height: 62)
-            .background(Color.priMain)
+//            .background(Color.priMain)
             .padding(.bottom, 1)
         }
         .navigationTitle("ChatGPT")

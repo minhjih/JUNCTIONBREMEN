@@ -5,9 +5,14 @@
 //  Created by 임유리 on 8/11/24.
 //
 import SwiftUI
+import Combine
+
+class SharedData: ObservableObject {
+    @Published var babyName: String = ""
+}
 
 struct SecondView: View {
-    @State var name: String = ""
+    @EnvironmentObject var babyName: SharedData
     @State private var selectedButton: Int? = nil
     @Environment(\.dismiss) var dismiss
 
@@ -25,7 +30,7 @@ struct SecondView: View {
                         Text("Baby Name")
                             .padding(.trailing, 250)
                             .foregroundColor(.priMain)
-                        TextField("ex) Junior", text: $name)
+                        TextField("ex) Junior", text: $babyName.babyName)
                             .frame(height: 40) // 높이
                             .padding(.horizontal, 15)
                             .overlay(
