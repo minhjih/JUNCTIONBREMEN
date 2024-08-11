@@ -48,15 +48,11 @@ def run(img_loc = "./input.jpg"):
     get_food_json(img, img_loc) # food json masking 영역 가져오기
     
     nyu2_loader = loaddata.readNyu2(img_loc)
-  
-    nut_source = test(nyu2_loader, model, img.shape[1], img.shape[0])
-    with open('nutritional_info.json', 'w') as json_file:
-        res= json.dump(nut_source, json_file)
-    if not res :
-        return None
-    return res 
+   
+    return test(nyu2_loader, model, img.shape[1], img.shape[0])
 
 def test(nyu2_loader, model, width, height):
+    allNutrients={}
     with torch.no_grad():        
         for i, image in enumerate(nyu2_loader):
             #image = torch.autograd.Variable(image, volatile=True).cuda()
@@ -78,18 +74,17 @@ def test(nyu2_loader, model, width, height):
             """
             vol 딕셔너리로 volume 나타내는거 -> 테이블 계산하기
             """
-            nut_source = cal(vol)
-            print(nut_source)
             out_file = open(os.path.join("./output", "out.txt"), "w")
-            #out_file.write("Volume:\n")
+            out_file.write("Volume:\n")
             out_file.write(str(vol))
-            #out_file.write("\n")
-            #out_file.write("unit: cm^3")
+            out_file.write("\n")
+            out_file.write("unit: cm^3")
             out_file.close()
+            allNutrients = calc_all_nutrients(vol)
             get_mask(out_grey, "./labelme_annotations_ellipse.json", "./output")
-    return nut_source
+    return allNutrients
 
-def cal(vol):
+def calc_all_nutrients(vol):
     nutritional_info = {
         "bulgogi": {"Carbohydrate": 0.02, "Protein": 0.2, "Fat": 0.125, "Sodium": 30},
         "kimchi": {"Carbohydrate": 0.03, "Protein": 0.025, "Fat": 0.0, "Sodium": 60},
@@ -104,12 +99,13 @@ def cal(vol):
         "soup": {"Carbohydrate": 0.02, "Protein": 0.05, "Fat": 0.025, "Sodium": 40},
         "tofu": {"Carbohydrate": 0.05, "Protein": 0.25, "Fat": 0.175, "Sodium": 0.5}
     }
-    nutrient = {"Carbohydrate": 0, "Protein": 0, "Fat": 0, "Sodium": 0} 
+    nutrient = {"Carbohydrate": 0, "Protein": 0, "Fat": 0, "Sodium": 0, "Calories":0} 
     for i in vol:
         for j in nutrient:
+            if j=="Calories": continue
             nutrient[j] += nutritional_info[i][j]*vol[i]
             
-    nutrient["calories"] = nutrient["Carbohydrate"] * 4 + nutrient["Protein"] * 4 + nutrient["Fat"] * 9
+    nutrient["Calories"] = nutrient["Carbohydrate"] * 4 + nutrient["Protein"] * 4 + nutrient["Fat"] * 9
     return nutrient
 
 def initiateAI():

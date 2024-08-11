@@ -1,9 +1,5 @@
-from flask import Flask, g, jsonify, request, Blueprint, send_file, Response
-import os
-import json
+from flask import Flask, jsonify, request
 import demo
-import calculate_nutrient
-import ast
 app_ai = Flask(__name__)
 @app_ai.route('/')
 def home():
@@ -16,13 +12,15 @@ def image_process():
   #return jsonify({"bulgogi": 10, "Protein": 20})
   image = request.files['image']
   image.save('input.jpg')
-  demo.run()
-  with open('output/out.txt', 'r') as file:
-        content = file.read()
-  data_dict = ast.literal_eval(content)
-
-  return jsonify(calculate_nutrient.calculate_nut(data_dict))
-  
+  total_nutrient=demo.run()
+  print("aa")
+  nutrient = {}
+  nutrient["Carbohydrate(g)"] = int(round(total_nutrient["Carbohydrate"]))
+  nutrient["Protein(g)"] = int(round(total_nutrient["Protein"]))
+  nutrient["Fat(g)"] = int(round(total_nutrient["Fat"]))
+  nutrient["Sodium(mg)"] = int(round(total_nutrient["Sodium"] / 1000.0))
+  nutrient["Calories(kcal)"] = int(round(total_nutrient["Calories"]))
+  return jsonify(nutrient)
     
 if __name__ == '__main__':
     print("local ai server")

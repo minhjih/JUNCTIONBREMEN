@@ -1,5 +1,11 @@
 def calculate_nut(vol):
-    nutrient = {"Carbohydrate": 0, "Protein": 0, "Fat": 0, "Sodium": 0}
+    nutrient = {
+        "Carbohydrate(g)": 0,
+        "Protein(g)": 0,
+        "Fat(g)": 0,
+        "Sodium(mg)": 0,
+        "Calories(kcal)": 0
+    }   
     
     nutritional_info = {
         "bulgogi": {"Carbohydrate": 0.2, "Protein": 2.3, "Fat": 4.5, "Sodium": 300},
@@ -19,14 +25,16 @@ def calculate_nut(vol):
     for ingredient, volume in vol.items():
         if ingredient in nutritional_info:
             nutrient_info = nutritional_info[ingredient]
-            nutrient["Carbohydrate"] += nutrient_info["Carbohydrate"] * volume
-            nutrient["Protein"] += nutrient_info["Protein"] * volume
-            nutrient["Fat"] += nutrient_info["Fat"] * volume
-            nutrient["Sodium"] += nutrient_info["Sodium"] * volume
-        
-    nutrient["Carbohydrate"] = int(round(nutrient["Carbohydrate"]))
-    nutrient["Protein"] = int(round(nutrient["Protein"]))
-    nutrient["Fat"] = int(round(nutrient["Fat"]))
-    nutrient["Sodium"] = nutrient["Sodium"] / 1000
+            nutrient["Carbohydrate(g)"] += nutrient_info["Carbohydrate"] * volume
+            nutrient["Protein(g)"] += nutrient_info["Protein"] * volume
+            nutrient["Fat(g)"] += nutrient_info["Fat"] * volume
+            nutrient["Sodium(mg)"] += nutrient_info["Sodium"] * volume
+
+    nutrient["Carbohydrate(g)"] = int(round(nutrient["Carbohydrate(g)"]))
+    nutrient["Protein(g)"] = int(round(nutrient["Protein(g)"]))
+    nutrient["Fat(g)"] = int(round(nutrient["Fat(g)"]))
+    nutrient["Sodium(mg)"] = int(round(nutrient["Sodium(mg)"] / 1000.0))
+    nutrient["Calories(kcal)"] = int(round(vol["Calories"]))
     return nutrient
+
     
