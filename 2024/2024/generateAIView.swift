@@ -37,7 +37,7 @@ struct ChatView: View {
                 }
             }
             
-            HStack {
+            HStack(alignment: .center) {
                 Button(action: {
                     showImagePicker.toggle() // 사진 선택 모달을 표시
                 }) {
@@ -76,10 +76,8 @@ struct ChatView: View {
                         )
                 }
             }.onAppear (perform : UIApplication.shared.hideKeyboard)
-            
-            .frame(width: 393, height: 62)
-//            .background(Color.priMain)
-            .padding(.bottom, 1)
+            .frame(width: 393, height: 36)
+            .padding(.bottom, 6)
         }
         .navigationTitle("ChatGPT")
         .sheet(isPresented: $showImagePicker) {

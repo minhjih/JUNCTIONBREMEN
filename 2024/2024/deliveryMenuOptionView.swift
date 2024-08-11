@@ -11,6 +11,8 @@ struct deliveryMenuOptionView: View {
     @Environment(\.dismiss) var dismiss
     @State private var showAlert = false
     @State private var showCartView = false
+    @State private var selection1 = 0
+    @State private var selection2 = 0
     var image: String
     var name: String
     var description: String
@@ -118,10 +120,10 @@ struct deliveryMenuOptionView: View {
                     ZStack {
                         Circle()
                             .frame(width: 24, height: 24)
-                            .foregroundColor(.tintMain)
+                            .foregroundColor(selection1 == 0 ? .tintMain : .black4)
                         Circle()
                             .frame(width: 10, height: 10)
-                            .foregroundColor(.white)
+                            .foregroundColor(selection1 == 0 ? .white : .black4)
                     }
                     .padding(.leading, 20)
                     .padding(.trailing, 2)
@@ -132,15 +134,18 @@ struct deliveryMenuOptionView: View {
                         .font(.system(size: 16))
                         .padding(.trailing, 20)
                 }
+                .onTapGesture {
+                    selection1 = 0
+                }
                 .padding(.bottom, 18)
                 HStack(alignment: .center) {
                     ZStack {
                         Circle()
                             .frame(width: 24, height: 24)
-                            .foregroundColor(.black4)
+                            .foregroundColor(selection1 == 1 ? .tintMain : .black4)
                         Circle()
                             .frame(width: 10, height: 10)
-                            .foregroundColor(.black4)
+                            .foregroundColor(selection1 == 1 ? .white : .black4)
                     }
                     .padding(.leading, 20)
                     .padding(.trailing, 2)
@@ -151,15 +156,18 @@ struct deliveryMenuOptionView: View {
                         .font(.system(size: 16))
                         .padding(.trailing, 20)
                 }
+                .onTapGesture {
+                    selection1 = 1
+                }
                 .padding(.bottom, 18)
                 HStack(alignment: .center) {
                     ZStack {
                         Circle()
                             .frame(width: 24, height: 24)
-                            .foregroundColor(.black4)
+                            .foregroundColor(selection1 == 2 ? .tintMain : .black4)
                         Circle()
                             .frame(width: 10, height: 10)
-                            .foregroundColor(.black4)
+                            .foregroundColor(selection1 == 2 ? .white : .black4)
                     }
                     .padding(.leading, 20)
                     .padding(.trailing, 2)
@@ -169,6 +177,9 @@ struct deliveryMenuOptionView: View {
                     Text("+ $3.99")
                         .font(.system(size: 16))
                         .padding(.trailing, 20)
+                }
+                .onTapGesture {
+                    selection1 = 2
                 }
                 .padding(.bottom, 18)
                 Rectangle()
@@ -188,10 +199,10 @@ struct deliveryMenuOptionView: View {
                     ZStack {
                         Circle()
                             .frame(width: 24, height: 24)
-                            .foregroundColor(.tintMain)
+                            .foregroundColor(selection2 == 0 ? .tintMain : .black4)
                         Circle()
                             .frame(width: 10, height: 10)
-                            .foregroundColor(.white)
+                            .foregroundColor(selection2 == 0 ? .white : .black4)
                     }
                     .padding(.leading, 20)
                     .padding(.trailing, 2)
@@ -202,11 +213,19 @@ struct deliveryMenuOptionView: View {
                         .font(.system(size: 16))
                         .padding(.trailing, 20)
                 }
+                .onTapGesture {
+                    selection2 = 0
+                }
                 .padding(.bottom, 18)
                 HStack(alignment: .center) {
-                    Circle()
-                        .frame(width: 24, height: 24)
-                        .foregroundColor(.black4)
+                    ZStack {
+                        Circle()
+                            .frame(width: 24, height: 24)
+                            .foregroundColor(selection2 == 1 ? .tintMain : .black4)
+                        Circle()
+                            .frame(width: 10, height: 10)
+                            .foregroundColor(selection2 == 1 ? .white : .black4)
+                    }
                         .padding(.leading, 20)
                         .padding(.trailing, 2)
                     Text("2x Seasoning")
@@ -215,6 +234,9 @@ struct deliveryMenuOptionView: View {
                     Text("+ $0")
                         .font(.system(size: 16))
                         .padding(.trailing, 20)
+                }
+                .onTapGesture {
+                    selection2 = 1
                 }
                 .padding(.bottom, 18)
                 .background(

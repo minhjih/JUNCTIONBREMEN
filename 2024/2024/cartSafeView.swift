@@ -51,7 +51,7 @@ struct cartSafeView: View {
             }
             .padding(.leading, 20)
             Spacer()
-            Text("Order for $21.98")
+            Text("Order for $13.99")
                 .font(.system(size: 16))
                 .fontWeight(.bold)
                 .foregroundColor(.white)

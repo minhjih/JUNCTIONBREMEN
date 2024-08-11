@@ -42,6 +42,7 @@ struct RestaurantCard: View {
             .frame(width: 353, height: 156)
             HStack {
                 Text(name)
+                    .font(.system(size: 20))
                     .fontWeight(.bold)
                 Text("★\(rating)")
                     .font(.system(size: 14))
@@ -54,9 +55,9 @@ struct RestaurantCard: View {
                 .font(.system(size: 12))
                 .foregroundColor(.black)
                 .padding(.horizontal, 15)
-                .padding(.bottom, 15)
+                .padding(.bottom, 18)
         }
-        .frame(width: 353, height: 227)
+        .frame(width: 353)
         .background(.white)
         .clipShape(RoundedRectangle(cornerRadius: 18))
         .shadow(color: Color.black.opacity(0.25), radius: 6.8, x: 0, y: 4)
@@ -230,7 +231,7 @@ struct FlexibleView<Data: RandomAccessCollection, Content: View>: View where Dat
 
 #Preview() {
     VStack() {
-//        RestaurantCard(image1: "rest1_1", image2: "rest1_2", image3: "rest1_3", name: "Chicken Table", rating: "4.5", time: "40-45", tip: "2-4", min: "10")
+        RestaurantCard(image1: "rest1_1", image2: "rest1_2", image3: "rest1_3", name: "Chicken Table", rating: "4.5", time: "40-45", tip: "2-4", min: "10")
         FoodCard(image: "rest1_1", name: "Fried Chicken with Fries", description: "Delicious fried chicken with all-time best side dish, french fries.", keys: ["Carbohydrate", "High Protein", "High Fat", "Salty"], price: "11.99")
 //        ReviewCard()
     }
