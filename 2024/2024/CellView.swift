@@ -256,9 +256,69 @@ struct CalendarView: View {
                         .padding(.leading, 6)
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
-                Image("nut1")
-                Image("nut2")
-                    .padding(.bottom, 8)
+                VStack(alignment: .leading, spacing: 10) {
+                    HStack {
+                        Text("Vitamin A")
+                            .foregroundColor(.gray)
+                            .frame(width: 95, alignment: .leading)
+                        ZStack(alignment: .leading) {
+                            Rectangle()
+                                .fill(Color.gray.opacity(0.3))
+                                .frame(height: 10)
+                            Rectangle()
+                                .fill(Color.orange)
+                                .frame(width: 130 * 1.0, height: 10)
+                        }
+                        .cornerRadius(5)
+                        Spacer()
+                        Text("130 mg")
+                            .foregroundColor(.black)
+                            .bold()
+                            .frame(width: 60, alignment: .trailing)
+                    }
+                    .padding(.horizontal, 8)
+                    HStack {
+                        Text("Salt")
+                            .foregroundColor(.gray)
+                            .frame(width: 95, alignment: .leading)
+                        ZStack(alignment: .leading) {
+                            Rectangle()
+                                .fill(Color.gray.opacity(0.3))
+                                .frame(height: 10)
+                            Rectangle()
+                                .fill(Color.secMain)
+                                .frame(height: 10)
+                        }
+                        .cornerRadius(5)
+                        Spacer()
+                        Text("180 mg")
+                            .foregroundColor(.black)
+                            .bold()
+                            .frame(width: 60, alignment: .trailing)
+                    }
+                    .padding(.horizontal, 8)
+                    HStack {
+                        Text("Protein")
+                            .foregroundColor(.gray)
+                            .frame(width: 95, alignment: .leading)
+                        ZStack(alignment: .leading) {
+                            Rectangle()
+                                .fill(Color.gray.opacity(0.3))
+                                .frame(height: 10)
+                            Rectangle()
+                                .fill(Color.posMain)
+                                .frame(height: 10)
+                        }
+                        .cornerRadius(5)
+                        Spacer()
+                        Text("72 g")
+                            .foregroundColor(.black)
+                            .bold()
+                            .frame(width: 60, alignment: .trailing)
+                    }
+                    .padding(.horizontal, 8)
+                }
+                .padding(.bottom, 8)
                 
                 FoodCard(image: "rest1_1", name: "Fried Chicken with Fries", description: "Delicious fried chicken with all-time best side dish, french fries.", keys: ["Carbohydrate", "High Protein", "High Fat", "Salty"], price: "11.99")
                     .padding(.bottom, 6)
