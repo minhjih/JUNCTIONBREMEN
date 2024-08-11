@@ -14,7 +14,18 @@ struct fourthView : View {
     var body: some View {
         NavigationView {
             VStack {
-               Image("third")
+                HStack(spacing: 5) {
+                    RoundedRectangle(cornerRadius: 4)
+                        .frame(width: 80, height: 3)
+                        .foregroundColor(.priMain)
+                    RoundedRectangle(cornerRadius: 4)
+                        .frame(width: 80, height: 3)
+                        .foregroundColor(.priMain)
+                    RoundedRectangle(cornerRadius: 4)
+                        .frame(width: 80, height: 3)
+                        .foregroundColor(.priMain)
+                }
+                .padding(.bottom, 12)
                 HStack{
                     Image("Group 2_3")
                     Text("Last Question")

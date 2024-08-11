@@ -19,7 +19,18 @@ struct SecondView: View {
     var body: some View {
         NavigationStack {
             VStack {
-               Image("first")
+                HStack(spacing: 5) {
+                    RoundedRectangle(cornerRadius: 4)
+                        .frame(width: 80, height: 3)
+                        .foregroundColor(.priMain)
+                    RoundedRectangle(cornerRadius: 4)
+                        .frame(width: 80, height: 3)
+                        .foregroundColor(.black4)
+                    RoundedRectangle(cornerRadius: 4)
+                        .frame(width: 80, height: 3)
+                        .foregroundColor(.black4)
+                }
+                .padding(.bottom, 12)
                 HStack{
                     Image("Group 2")
                     Text("Tell Us About Your Baby")

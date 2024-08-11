@@ -20,7 +20,18 @@ struct ThirdView :View {
     var body: some View {
         NavigationView {
             VStack {
-                Image("second")
+                HStack(spacing: 5) {
+                    RoundedRectangle(cornerRadius: 4)
+                        .frame(width: 80, height: 3)
+                        .foregroundColor(.priMain)
+                    RoundedRectangle(cornerRadius: 4)
+                        .frame(width: 80, height: 3)
+                        .foregroundColor(.priMain)
+                    RoundedRectangle(cornerRadius: 4)
+                        .frame(width: 80, height: 3)
+                        .foregroundColor(.black4)
+                }
+                .padding(.bottom, 12)
                 HStack{
                     Image("Group 2_2")
                     Text("Tell Us About Yourself")
