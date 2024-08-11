@@ -119,9 +119,9 @@ struct deliveryMenuView: View {
 //                    Text("ReviewView()")
                     // PLACEHOLDER
                     VStack {
-                        Image("Review")
-                        Image("Review")
-                        Image("Review")
+                        ReviewCard(username: "Anonymous User", rating: "★★★★☆", comment: "It is very delicious and great for my health! It is very delicious and great for my health!", images: ["rest1_1", "rest1_3", "rest1_2", "rest1_1"])
+                        ReviewCard(username: "Anonymous User", rating: "★★★★☆", comment: "It is very delicious and great for my health! It is very delicious and great for my health!", images: ["rest1_1", "rest1_3", "rest1_2", "rest1_1"])
+                        ReviewCard(username: "Anonymous User", rating: "★★★★☆", comment: "It is very delicious and great for my health! It is very delicious and great for my health!", images: ["rest1_1", "rest1_3", "rest1_2", "rest1_1"])
                     }
                 }
             }

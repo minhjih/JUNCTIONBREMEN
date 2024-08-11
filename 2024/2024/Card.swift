@@ -108,8 +108,6 @@ struct FoodCard: View {
     }
 }
 
-
-
 struct WrapView: View {
     let keys: [String]
     
@@ -229,10 +227,55 @@ struct FlexibleView<Data: RandomAccessCollection, Content: View>: View where Dat
     }
 }
 
+struct ReviewCard: View {
+    var username: String
+    var rating: String
+    var comment: String
+    var images: [String]
+    
+    var body: some View {
+        EmptyView()
+        HStack(alignment: .top) {
+            Circle()
+                .frame(width:36, height: 36)
+                .foregroundColor(.black4)
+                .padding(.leading, 12)
+                .padding(.trailing, 4)
+            VStack(alignment: .leading, spacing: 5) {
+                Text(username)
+                    .font(.system(size: 16))
+                    .fontWeight(.bold)
+                Text(rating)
+                    .font(.system(size: 10))
+                    .foregroundColor(.black3)
+                Text(comment)
+                    .font(.system(size: 12))
+                    .padding(.bottom, 4)
+                ScrollView(.horizontal) {
+                    HStack(spacing: 8) {
+                        ForEach(images, id: \.self) { imageName in
+                            Image(imageName)
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 120, height: 90)
+                                .cornerRadius(15)
+                                .clipped()
+                        }
+                    }
+                }
+            }
+        }
+        Rectangle()
+            .foregroundColor(.black4)
+            .frame(width: 350, height: 1)
+            .padding(.vertical, 9)
+    }
+}
+
 #Preview() {
     VStack() {
-        RestaurantCard(image1: "rest1_1", image2: "rest1_2", image3: "rest1_3", name: "Chicken Table", rating: "4.5", time: "40-45", tip: "2-4", min: "10")
-        FoodCard(image: "rest1_1", name: "Fried Chicken with Fries", description: "Delicious fried chicken with all-time best side dish, french fries.", keys: ["Carbohydrate", "High Protein", "High Fat", "Salty"], price: "11.99")
-//        ReviewCard()
+//        RestaurantCard(image1: "rest1_1", image2: "rest1_2", image3: "rest1_3", name: "Chicken Table", rating: "4.5", time: "40-45", tip: "2-4", min: "10")
+//        FoodCard(image: "rest1_1", name: "Fried Chicken with Fries", description: "Delicious fried chicken with all-time best side dish, french fries.", keys: ["Carbohydrate", "High Protein", "High Fat", "Salty"], price: "11.99")
+        ReviewCard(username: "Anonymous User", rating: "★★★★☆", comment: "It is very delicious and great for my health! It is very delicious and great for my health!", images: ["rest1_1", "rest1_3", "rest1_2", "rest1_1"])
     }
 }
